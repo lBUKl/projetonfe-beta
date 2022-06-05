@@ -17,9 +17,9 @@ def menu():
     print('  ')
     time.sleep(1)
     opcao = str(input('Digite S para continuar e N para sair: '))
-    if opcao in ['S', 's']:
+    if opcao.lower() == 's':
         entrada()
-    elif opcao in ['N', 'n']:
+    elif opcao.lower() == 'n':
         exit()
     else:
         menu()
@@ -42,7 +42,7 @@ def entrada():
 
         resposta = (input('Deseja calcular o ST manualmente para cada produto ? (S/N) '))
 
-        if resposta in ['S', 's']:
+        if resposta.lower() == 's':
             while True:
                 substituicao_tributaria = float(input('Digite o ST do produto:  ').replace(',', '.'))
                 if substituicao_tributaria == 'sair':
@@ -60,7 +60,7 @@ def entrada():
                         print('--' * 50)
                         del produto
 
-        elif resposta in ['N', 'n']:
+        elif resposta.lower() == 'n':
             while True:
                 produto = float(input('Digite o valor do produto a ser calculado: ').replace(',', '.'))
                 if produto == 'sair':
@@ -83,5 +83,3 @@ def entrada():
 
 while True:
     menu()
-
-
